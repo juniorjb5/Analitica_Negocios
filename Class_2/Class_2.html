@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Analítica de Negocios</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="PhD.(C) Orlando Joaqui-Barandica" />
+    <meta name="date" content="2023-01-01" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Click para copiar código","success":"Código copiado","error":"Ctrl+C para copiar"})</script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":false,"warnings":true}</script>
+    <link href="libs/animate.css-xaringan/animate.fade.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="fonts_mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="sydney.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: inverse, left, bottom
+background-image: url("img/fondo.jpg")
+background-size: cover
+
+
+# **Analítica de Negocios**
+----
+
+## **&lt;br/&gt; Rmarkdown**
+
+### PhD.(C) Orlando Joaqui-Barandica
+### 2023
+
+
+
+
+
+
+---
+name: hola
+class: inverse, middle, center
+
+&lt;img style="border-radius: 50%;" src="img/jave.jpg"
+width="150px"
+/&gt;
+
+# Pontificia Universidad Javeriana de Cali
+
+--
+
+## Maestría en Finanzas
+---
+
+
+.pull-left[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;img src="img/gif1.gif" width="110%" /&gt;
+]
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+.pull-right[
+# Orlando Joaqui-Barandica
+### [www.joaquibarandica.com](https://www.joaquibarandica.com)
+ *PhD.(C) in Industrial Engineering* 
+ 
+ *MSc. Applied Economics*
+ 
+ *BSc. Statistics*
+]
+
+
+---
+
+
+
+class: inverse, middle, center
+
+# Por qué R-Markdown?
+
+---
+class: bottom, center
+background-image: url(https://media.giphy.com/media/11fDMHAzihB8D6/source.gif)
+
+# `Crisis de reproducibilidad?` 
+
+---
+
+class: middle, center
+
+# Cambia tu modelo mental
+
+.pull-left[
+
+### Source &amp;harr; output
+
+&lt;img src="img/word.png" width="50%" /&gt;
+
+]
+
+.pull-right[
+
+### Source &amp;rarr; output
+
+&lt;img src="img/rmd-file.png" width="50%" /&gt;
+
+]
+
+
+
+---
+class: middle, center
+
+# Cambia tu modelo mental
+
+.pull-left[
+
+### Source &amp;harr; output
+
+&lt;img src="img/haba-elise.jpg" width="50%" /&gt;
+
+]
+
+.pull-right[
+
+### Source &amp;rarr; output
+
+&lt;img src="img/doll.png" width="50%" /&gt;
+
+]
+
+---
+
+class: middle, inverse, center
+
+# Misma ~~Muñeca~~ Fuente
+
+--
+
+# Diferente ~~Vestido~~ Salida
+
+
+---
+
+
+class: middle, center
+
+# `html_document`
+
+&lt;img src="img/doll.png" width="40%" /&gt;
+
+
+---
+class: middle, center
+
+# Qué hay adentro?
+
+![](img/doc-make.jpg)
+
+
+---
+name: card0
+background-image: url(img/card0.png)
+background-size: contain
+
+
+---
+name: card1
+background-image: url(img/card1.png)
+background-size: contain
+
+---
+
+
+# Guarda las opciones de la salida en el YAML
+
+.pull-left[
+
+```yaml
+---
+author: Your name here
+title: Your title here
+output: html_document
+---
+```
+
+```yaml
+---
+author: Your name here
+title: Your title here
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+---
+```
+
+
+]
+
+.pull-right[
+
+&lt;img src="img/orchestra.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+background-image: url(img/Single-rmd.png)
+background-size: contain
+
+---
+background-image: url(img/Single-rmd1.png)
+background-size: contain
+
+---
+background-image: url(img/Single-rmd2.png)
+background-size: contain
+
+---
+background-image: url(img/Single-rmd3.png)
+background-size: contain
+
+---
+class: middle center
+background-image: url(img/Single-knit1.png)
+background-size: contain
+
+--
+
+&lt;img src="img/Single-knit2.png" style="
+  position: absolute; 
+  width: 91%; 
+  top: -53px;
+  right: 5px;
+"&gt;
+
+--
+
+&lt;img src="img/Single-knit3.png" style="
+  position: absolute; 
+  width: 97%; 
+  top: -45px;
+  right: -51px;
+"&gt;
+
+---
+
+
+# Formatos de salida
+
+.center[
+
+&lt;a href="https://rmarkdown.rstudio.com/docs/reference/index.html#section-output-formats" target="_blank"&gt;&lt;img src="img/rmdbase-formats.png" width="40%" /&gt;&lt;/a&gt;
+
+]
+
+https://rmarkdown.rstudio.com/docs/reference/index.html#section-output-formats
+
+---
+
+class: middle, center
+
+# Formatos de extensión de salida
+
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/flexdashboard.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png" width="32%" /&gt;
+
+---
+
+
+
+# &lt;center&gt;Headers&lt;/center&gt;
+
+--
+
+.pull-left[
+```markdown
+# HEADER 1
+
+## HEADER 2
+
+### HEADER 3
+
+#### HEADER 4
+
+##### HEADER 5
+
+###### HEADER 6
+```
+]
+
+--
+
+.pull-right[
+# HEADER 1
+
+## HEADER 2
+
+### HEADER 3
+
+#### HEADER 4
+
+##### HEADER 5
+
+###### HEADER 6
+]
+
+---
+
+![](img/rmd-nav.png)
+
+---
+
+# &lt;center&gt;Text&lt;/center&gt;
+
+--
+
+.pull-left[
+```markdown
+Childhood **vaccines**  
+are one of the  
+_great triumphs_  
+of modern medicine. 
+```
+]
+
+--
+
+.pull-right[
+
+Childhood **vaccines**  
+are one of the  
+_great triumphs_  
+of modern medicine. 
+
+]
+
+---
+class: top
+
+# &lt;center&gt;Lists&lt;/center&gt;
+
+--
+
+.pull-left[
+
+```markdown
+Indeed, parents whose children are  
+vaccinated no longer have to worry about  
+their child's death or disability from:
+
+- whooping cough, 
+- polio, 
+- diphtheria, 
+- hepatitis, or 
+- a host of other infections.
+
+Vaccines are the most cost-effective health  
+care interventions there are. We have   
+three new, extremely effective vaccines to  
+roll out in developing countries:  
+
+1. pneumonia
+1. rotavirus
+1. meningitis A
+```
+
+]
+
+--
+
+.pull-right[
+
+Indeed, parents whose children are  
+vaccinated no longer have to worry about  
+their child's death or disability from:
+
+- whooping cough, 
+- polio, 
+- diphtheria, 
+- hepatitis, or 
+- a host of other infections.
+
+Vaccines are the most cost-effective health  
+care interventions there are. We have  
+three new, extremely effective vaccines to  
+roll out in developing countries:
+
+1. pneumonia
+1. rotavirus
+1. meningitis A
+
+]
+
+---
+
+# &lt;center&gt;Images&lt;/center&gt;
+
+--
+
+```markdown
+Pontificia Universidad Javeriana Cali
+
+![](https://www.javerianacali.edu.co/sites/default/files/styles/1920x700/public/2021-06/slide_4.jpg.webp?itok=eg_evyJG)
+```
+
+
+--
+
+
+Pontificia Universidad Javeriana Cali
+
+![](./img/slide_4.jpg)
+
+
+---
+
+# &lt;center&gt;Links&lt;/center&gt;
+
+--
+
+
+```markdown
+[Photo](https://www.javerianacali.edu.co/sites/default/files/styles/1920x700/public/2021-06/slide_4.jpg.webp?itok=eg_evyJG)
+
+Pontificia Universidad Javeriana Cali
+
+![](https://www.javerianacali.edu.co/sites/default/files/styles/1920x700/public/2021-06/slide_4.jpg.webp?itok=eg_evyJG)
+```
+
+
+--
+
+
+[Photo](https://www.javerianacali.edu.co/sites/default/files/styles/1920x700/public/2021-06/slide_4.jpg.webp?itok=eg_evyJG)
+
+Pontificia Universidad Javeriana Cali
+
+![](./img/slide_4.jpg)
+
+
+---
+
+# Chunk
+
+
+Una vez que controlamos como poner títulos, subtítulos y cabeceras y texto, podemos incluir análisis y resultados de R en el informe o tablero. Para ello debemos escribir el codigo de R entre una cabecera y pie que permite interpretar la sintáxis de `R` incluyendo un trozo o `chunk`:
+
+
+.pull-left[
+
+````
+```{r}
+
+x &lt;- 3 + 4
+
+
+```
+````
+
+Este es un ejemplo de **chunk**
+]
+
+
+.pull-right[
+
+&lt;img src="img/chunk.png" width="50%" /&gt;
+
+]
+
+---
+
+# Opciones de los chunk
+
+
+La salida de chunk se puede personalizar con las opciones de a traves de argumentos establecidos.En la Guía de referencia de R Markdown se encuentra una lista completa de las opciones de los chunk. Los argumentos más comunes son los siguientes:
+
+
+
+* **include = FALSE** evita que el código y los resultados aparezcan en el archivo terminado. R Markdown todavía ejecuta el código en el fragmento, y los resultados pueden ser utilizados por otros fragmentos. echo = FALSE impide el código, pero no aparecen los resultados en el archivo terminado. Esta es una forma útil de incrustar figuras.
+* **message = FALSE** evita que los mensajes generados por el código aparezcan en el archivo terminado.
+* **warning = FALSE** evita que las advertencias generadas por el código aparezcan en el final.
+* **fig.cap = "..."** agrega un título a los resultados gráficos.
+
+
+
+
+---
+
+# message / warning
+
+
+
+![](https://www.tidyverse.org/images/tidyverse_1.2.0/tidyverse_1-2-0_pkg_load.gif)
+
+
+
+---
+
+# message / warning
+
+.pull-left[
+
+````
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+````
+
+]
+
+.pull-right[
+
+
+
+]
+
+---
+
+class: center, middle
+
+# Websites!
+
+---
+class: middle
+
+.left-column[
+# 🔗
+]
+
+.right-column[
+
+&lt;a href="https://rmarkdown.rstudio.com/" target="_blank"&gt;&lt;img src="img/rmarkdown-site.png" width="80%" /&gt;&lt;/a&gt;
+]
+
+.footnote[https://rmarkdown.rstudio.com/]
+
+---
+class: middle
+
+.left-column[
+# 🔗
+]
+
+.right-column[
+
+&lt;a href="https://rmarkdown.rstudio.com/docs/" target="_blank"&gt;&lt;img src="img/rmarkdowndocs-site.png" width="80%" /&gt;&lt;/a&gt;
+]
+
+.footnote[https://rmarkdown.rstudio.com/docs/]
+
+---
+class: middle
+
+.left-column[
+# 🎯
+]
+
+.right-column[
+
+&lt;a href="https://community.rstudio.com/c/R-Markdown" target="_blank"&gt;&lt;img src="img/rmarkdowncommunity-site.png" width="80%" /&gt;&lt;/a&gt;
+]
+
+.footnote[https://community.rstudio.com/c/R-Markdown]
+
+---
+class: middle
+
+.left-column[
+# 🤖
+]
+
+.right-column[
+
+&lt;a href="https://rmarkdown.rstudio.com/lesson-6.html" target="_blank"&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/rmarkdown/gh-pages/lesson-images/params-1-hawaii.png" width="80%" /&gt;&lt;/a&gt;
+]
+
+.footnote[https://bookdown.org/yihui/rmarkdown/parameterized-reports.html,&lt;br&gt;
+https://rmarkdown.rstudio.com/lesson-6.html]
+
+
+
+
+
+
+
+
+
+
+---
+
+
+class: inverse, center, middle
+background-color: #122140
+
+.pull-left[
+
+.center[
+&lt;br&gt;&lt;br&gt;
+
+# Gracias!!!
+
+&lt;br&gt;
+
+
+
+### ¿Preguntas?
+
+&lt;br&gt;
+
+
+&lt;img src="img/qr-code.png" width="49%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+]
+
+
+.pull-right[
+
+&lt;br&gt; 
+&lt;br&gt; 
+&lt;img style="border-radius: 50%;" src="img/avatar.png"
+width="150px"
+/&gt;
+
+### [www.joaquibarandica.com](https://www.joaquibarandica.com)
+
+<i class="fa fa-envelope" role="presentation" aria-label="envelope icon"></i> orlando.joaqui@javerianacali.edu.co
+
+&lt;img src="img/Logo.jpg" width="120%"&gt;
+
+]
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
